@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo Sabedoria Prática ESG - Transforme Imposto em Legado</title>
+    <meta name="description" content="Plataforma ESG para destinação de IRPJ em projetos sociais. Mais valioso que rubis, transforme imposto em legado sustentável.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP para animações -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --ruby-primary: #DC143C;
+            --ruby-dark: #8B0000;
+            --ruby-light: #FF6B6B;
+            --gold: #D4AF37;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #050505;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--darker-bg);
+            color: #f5f5f5;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .ruby-glow {
+            box-shadow: 0 0 60px rgba(220, 20, 60, 0.6), 0 0 100px rgba(220, 20, 60, 0.3);
+        }
+        
+        .ruby-text-glow {
+            text-shadow: 0 0 20px rgba(220, 20, 60, 0.8), 0 0 40px rgba(220, 20, 60, 0.4);
+        }
+        
+        .ruby-gradient {
+            background: linear-gradient(135deg, #DC143C 0%, #8B0000 50%, #4a0404 100%);
+        }
+        
+        @keyframes pulse-ruby {
+            0%, 100% { box-shadow: 0 0 20px rgba(220, 20, 60, 0.4); }
+            50% { box-shadow: 0 0 60px rgba(220, 20, 60, 0.8), 0 0 100px rgba(220, 20, 60, 0.4); }
+        }
+        
+        .animate-pulse-ruby {
+            animation: pulse-ruby 2s infinite;
+        }
+        
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(220, 20, 60, 0.2);
+        }
+        
+        .input-field {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(220, 20, 60, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            border-color: var(--ruby-primary);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.3);
+            outline: none;
+        }
+        
+        .territory-card {
+            background: linear-gradient(145deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,0.9) 100%);
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .territory-card:hover {
+            border-color: var(--ruby-primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(220, 20, 60, 0.2);
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .ruby-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--ruby-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+           
